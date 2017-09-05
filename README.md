@@ -1,6 +1,8 @@
 # XamAgenda 
 Esta es una pequeña aplicación desarrollada con Xamarin Forms que sirve de estudio de esta plataforma de desarrollo para móviles. 
+
 Agenda personal para guardar contactos y citas. 
+
 Proyecto se ha realizado en Visual Studio 2017. 
 
 ## Características 
