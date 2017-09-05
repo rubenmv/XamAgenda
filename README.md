@@ -20,12 +20,16 @@ Agenda personal para guardar contactos y citas.
 
 ### Login 
 <img src="screenshot_1.png" width="300"> 
+
 ### Registro de nuevo usuario 
 <img src="screenshot_2.png" width="300"> 
+
 ### Pantalla principal de los datos del usuario 
 <img src="screenshot_3.png" width="300"> 
+
 ### Lista de contactos 
 <img src="screenshot_4.png" width="300"> 
+
 ### About 
 <img src="screenshot_5.png" width="300"> 
 
