@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamAgenda.Views.SignUpPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Registro de nuevo usuario" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
+                <Image Source="xamagenda_logo.png" VerticalOptions="Center" HeightRequest="64"/>
+
+                <Label Text="Usuario" />
+                <Entry x:Name="usernameEntry" />
+                <Label Text="Contraseña" />
+                <Entry x:Name="passwordEntry" IsPassword="true" />
+                <Label Text="Nombre completo" />
+                <Entry x:Name="nameEntry" />
+                <Label Text="Email" />
+                <Entry x:Name="emailEntry" />
+                <Label Text="Dirección" />
+                <Entry x:Name="addressEntry" />
+                <Label Text="Telefono" />
+                <Entry x:Name="phoneEntry" />
+
+                <Button Text="Entrar" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

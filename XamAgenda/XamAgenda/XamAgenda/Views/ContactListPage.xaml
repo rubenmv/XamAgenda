@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamAgenda.Views.ContactListPage">
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <SearchBar x:Name="ContactSearchBar" Placeholder="Buscar contacto" SearchButtonPressed="ContactSearchBar_SearchButtonPressed"></SearchBar>
+            <ListView  x:Name="ContactListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            Text="{Binding Name}"
+                            Detail="{Binding Phone}"
+                            TextColor="#503026"
+                            DetailColor="#f35e20"
+                            ImageSource="profile_pic.jpg" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamAgenda.Views.LoginPage"
+             xmlns:vm="clr-namespace:XamAgenda.Views;">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
+            <Image Source="xamagenda_logo.png" VerticalOptions="Center" HeightRequest="64"/>
+            <Label Text="Usuario" />
+            <Entry x:Name="usernameEntry" Placeholder="Usuario" />
+            <Label Text="Contraseña" />
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Contraseña" />
+            <Button Text="Entrar" Clicked="OnLoginButtonClicked" />
+            <Button Text="Nueva cuenta" Clicked="OnSignUpButtonClicked" />
+            <Label x:Name="messageLabel" />
+            <Label Text="Invitado" />
+            <Switch x:Name="guestUser" IsToggled="false" HorizontalOptions="Start"></Switch>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

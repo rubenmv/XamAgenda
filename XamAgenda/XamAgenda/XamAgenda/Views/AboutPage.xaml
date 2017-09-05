@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamAgenda.Views.AboutPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20, 20, 20, 20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamagenda_logo.png" VerticalOptions="Center" HeightRequest="64"/>
+                </ContentView>
+            </StackLayout>
+            <Label Style="{StaticResource TitleStyle}">
+                Desarrollado en C# haciendo uso del framework Xamarin Forms.
+            </Label>
+            <Label Style="{StaticResource TitleStyle}">
+                Rubén Martínez Vilar. 2017.
+            </Label>
+            <Button Text="rubenmartinez.es" Style="{StaticResource ButtonStyle}" Clicked="OpenWebsite">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

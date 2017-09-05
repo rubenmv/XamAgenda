@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamAgenda.Views.UserDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
+                <Button Text="{Binding ModifyButtonText}" Command="{Binding ModifyToggleCommand}" />
+                <Label Text="Usuario" />
+                <Entry x:Name="UsernameEntry" Text="rub3nmv" IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Contraseña" />
+                <Entry x:Name="PasswordEntry" Text="kdsfjsdnfjs" IsPassword="true" IsEnabled="False" />
+                <Button Text="Cambiar contraseña" />
+                <Label Text="Nombre" />
+                <Entry x:Name="NameEntry" Text="Ruben Martinez"  IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Email" />
+                <Entry x:Name="EmailEntry" Text="rub3nmv@gmail.com" IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Dirección" />
+                    <Entry x:Name="AddressEntry" Text="Av Alfonso Puchades, 19" IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Telefono" />
+                <Entry x:Name="PhoneEntry" Text="966955658" IsEnabled="{Binding ModifyModeOn}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
