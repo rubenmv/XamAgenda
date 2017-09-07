@@ -41,6 +41,7 @@
     <Compile Include="Data\Constants.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Data\TestDataGenerator.cs" />
+    <Compile Include="Helpers\IDialer.cs" />
     <Compile Include="Helpers\IFileHelper.cs" />
     <Compile Include="Helpers\ISQLite.cs" />
     <Compile Include="Models\Appointment.cs" />

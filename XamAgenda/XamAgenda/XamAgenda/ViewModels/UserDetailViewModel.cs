@@ -27,7 +27,7 @@ namespace XamAgenda.ViewModels
             ModifyToggleCommand = new Command(ModifyToggle);
             DatosUsuario = App.test.LoggedInUser.UserContact;
         }
-        
+
         #region Implementacion interfaz PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -39,7 +39,7 @@ namespace XamAgenda.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
         #endregion
-        
+
         #region Propiedades para binding
 
 
@@ -79,6 +79,18 @@ namespace XamAgenda.ViewModels
             }
         }
         #endregion
+
+        //bool Validate()
+        //{
+        //    bool valid = true;
+
+        //    if (string.IsNullOrWhiteSpace(nameEntry.Text))
+        //    {
+        //        messageLabel.Text = "Debe rellenar al menos el campo de nombre.";
+        //        valid = false;
+        //    }
+        //    return valid;
+        //}
 
         void ModifyToggle()
         {
