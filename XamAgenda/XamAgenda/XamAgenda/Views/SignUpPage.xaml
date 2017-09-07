@@ -22,8 +22,8 @@
                 <Entry x:Name="addressEntry" />
                 <Label Text="Telefono" />
                 <Entry x:Name="phoneEntry" />
-
-                <Button Text="Entrar" />
+                <Label x:Name="messageLabel" />
+                <Button Text="Enviar" x:Name="sendButton" Clicked="OnSendButtonClicked" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

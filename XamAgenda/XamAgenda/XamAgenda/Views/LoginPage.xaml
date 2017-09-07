@@ -10,9 +10,9 @@
         <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
             <Image Source="xamagenda_logo.png" VerticalOptions="Center" HeightRequest="64"/>
             <Label Text="Usuario" />
-            <Entry x:Name="usernameEntry" Placeholder="Usuario" />
+            <Entry x:Name="usernameEntry" Text="ruben" Placeholder="Usuario" />
             <Label Text="Contraseña" />
-            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Contraseña" />
+            <Entry x:Name="passwordEntry" IsPassword="true" Text="ruben" Placeholder="Contraseña" />
             <Button Text="Entrar" Clicked="OnLoginButtonClicked" />
             <Button Text="Nueva cuenta" Clicked="OnSignUpButtonClicked" />
             <Label x:Name="messageLabel" />

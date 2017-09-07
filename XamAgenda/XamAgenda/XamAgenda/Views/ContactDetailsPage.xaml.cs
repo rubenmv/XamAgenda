@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamAgenda.Models;
+using XamAgenda.ViewModels;
 
 namespace XamAgenda.Views
 {
@@ -15,6 +17,12 @@ namespace XamAgenda.Views
         public ContactDetailsPage()
         {
             InitializeComponent();
+        }
+
+        public ContactDetailsPage(Contact contact)
+        {
+            InitializeComponent();
+            BindingContext = new ContactDetailsViewModel(contact);
         }
     }
 }

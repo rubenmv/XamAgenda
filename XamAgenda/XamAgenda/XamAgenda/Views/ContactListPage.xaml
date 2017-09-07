@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamAgenda.Views.ContactListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="newContactToolbarItem" Text="Añadir contacto" Clicked="newContactToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout Orientation="Vertical">
-            <SearchBar x:Name="ContactSearchBar" Placeholder="Buscar contacto" SearchButtonPressed="ContactSearchBar_SearchButtonPressed"></SearchBar>
-            <ListView  x:Name="ContactListView">
+            <!--<SearchBar x:Name="ContactSearchBar" Placeholder="Buscar contacto" SearchCommand="{Binding SearchCommand}"></SearchBar>-->
+            <ListView  x:Name="ContactListView" ItemsSource="{Binding Contactos}" ItemTapped="OnContactTappedEvent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell
@@ -13,11 +16,10 @@
                             Detail="{Binding Phone}"
                             TextColor="#503026"
                             DetailColor="#f35e20"
-                            ImageSource="profile_pic.jpg" />
+                            ImageSource="profile_pic.jpg"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -43,13 +43,12 @@
     <Compile Include="Data\TestDataGenerator.cs" />
     <Compile Include="Helpers\IFileHelper.cs" />
     <Compile Include="Helpers\ISQLite.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ContactDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ContactListViewModel.cs" />
     <Compile Include="ViewModels\UserDetailViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
@@ -59,6 +58,9 @@
     </Compile>
     <Compile Include="Views\ContactListPage.xaml.cs">
       <DependentUpon>ContactListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateContactPage.xaml.cs">
+      <DependentUpon>CreateContactPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -85,10 +87,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -171,6 +169,12 @@
   <ItemGroup>
     <Content Include="Resources\profile_pic.jpg" />
     <Content Include="Resources\XamAgenda_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CreateContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamAgenda.Models
 {
-    class Appointment
+    public class Appointment
     {
         string description = String.Empty;
         public string Description

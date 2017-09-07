@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamAgenda.Models
 {
-    class Contact
+    public class Contact
     {
         public string Name { get; set; }
         public string Email { get; set; }

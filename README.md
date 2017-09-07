@@ -21,6 +21,7 @@ Proyecto se ha realizado en Visual Studio 2017.
 
 
 ## TODO 
+- Página de detalle de contacto.
 - Modificación de la foto del usuario/contacto.
 - Lista de citas/eventos.
 - Almacenamiento de datos de manera local mediante SQLite.

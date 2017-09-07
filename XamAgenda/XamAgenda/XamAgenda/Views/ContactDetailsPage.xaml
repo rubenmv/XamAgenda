@@ -3,8 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamAgenda.Views.ContactDetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
+                <Image Source="profile_pic.jpg" />
+                <Label Text="Nombre" />
+                <Entry x:Name="NameEntry" Text="{Binding DatosUsuario.Name}"  IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Email" />
+                <Entry x:Name="EmailEntry" Text="{Binding DatosUsuario.Email}" IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Dirección" />
+                <Entry x:Name="AddressEntry" Text="{Binding DatosUsuario.Address}" IsEnabled="{Binding ModifyModeOn}" />
+                <Label Text="Telefono" />
+                <Entry x:Name="PhoneEntry" Text="{Binding DatosUsuario.Phone}" IsEnabled="{Binding ModifyModeOn}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

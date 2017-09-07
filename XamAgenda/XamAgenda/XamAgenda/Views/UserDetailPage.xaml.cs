@@ -19,5 +19,11 @@ namespace XamAgenda.Views
             InitializeComponent();
             BindingContext = new UserDetailViewModel();
         }
+
+        private void SalirToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            App.IsUserLoggedIn = false;
+            App.Current.MainPage = new NavigationPage(new LoginPage());
+        }
     }
 }

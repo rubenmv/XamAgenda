@@ -11,9 +11,9 @@ using XamAgenda.Models;
 
 namespace XamAgenda.ViewModels
 {
-    class UserDetailViewModel : INotifyPropertyChanged
+    class ContactDetailsViewModel : INotifyPropertyChanged
     {
-        string modifyButtonText = "Modificar datos";
+        string modifyButtonText = "Modificar contacto";
         Contact datosUsuario = null;
         bool modifyModeOn = false;
 
@@ -22,27 +22,28 @@ namespace XamAgenda.ViewModels
             get;
         }
 
-        public UserDetailViewModel()
+        public ContactDetailsViewModel(Contact contact)
         {
             ModifyToggleCommand = new Command(ModifyToggle);
-            DatosUsuario = App.test.LoggedInUser.UserContact;
+            DatosUsuario = contact;
         }
-        
-        #region Implementacion interfaz PropertyChanged
+
+        #region Implementacion de la interfaz PropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// CallerMemberName hace que no sea necesario, en cada propiedad de la clase (Title, etc),
-        /// poner OnPropertyChanged(nameof(Title))
+        // CallerMemberName hace que no sea necesario, en cada propiedad de la clase (Title, etc),
+        // poner OnPropertyChanged(nameof(Title))
         void OnPropertyChanged([CallerMemberName] string name = "")
         {
             // ? means is not null
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
         #endregion
-        
+
         #region Propiedades para binding
-
-
+        
         public Contact DatosUsuario
         {
             get
@@ -83,7 +84,7 @@ namespace XamAgenda.ViewModels
         void ModifyToggle()
         {
             ModifyModeOn = !ModifyModeOn;
-            ModifyButtonText = modifyModeOn ? "Guardar Datos" : "Modificar Datos";
+            ModifyButtonText = modifyModeOn ? "Guardar contacto" : "Modificar contacto";
         }
     }
 }

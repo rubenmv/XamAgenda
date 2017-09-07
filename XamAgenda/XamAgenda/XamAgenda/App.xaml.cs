@@ -13,10 +13,12 @@ namespace XamAgenda
     public partial class App : Application
     {
         public static bool IsUserLoggedIn { get; set; }
-
+        public static TestDataGenerator test = null;
         public App()
         {
             InitializeComponent();
+            test = new TestDataGenerator();
+
             // Set main page
             // Master Detail page debe ser el root
             if (!IsUserLoggedIn)
@@ -28,7 +30,6 @@ namespace XamAgenda
                 Current.MainPage = new NavigationPage(new MDPage());
             }
         }
-
         static DataAccess dbUtils;
         static DataAccess DAUtil
         {
