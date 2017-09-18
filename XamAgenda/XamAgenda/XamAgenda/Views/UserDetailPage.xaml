@@ -8,8 +8,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
-                <!--<Button Text="{Binding ModifyButtonText}" Command="{Binding ModifyToggleCommand}" />
-                <Label x:Name="messageLabel" />-->
+                <Button Text="{Binding ModifyButtonText}" Command="{Binding ModifyToggleCommand}" />
+                <Button Text="Cancelar" Command="{Binding CancelSaveCommand}" IsVisible="{Binding ModifyModeOn}" />
+                <Label x:Name="messageLabel" />
                 <!--<Label Text="Usuario" />
                 <Entry x:Name="UsernameEntry" Text="{Binding Username}" IsEnabled="{Binding ModifyModeOn}" />
                 <Label Text="Contraseña" />

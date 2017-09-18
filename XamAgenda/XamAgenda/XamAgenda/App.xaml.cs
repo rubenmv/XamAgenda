@@ -14,6 +14,7 @@ namespace XamAgenda
     {
         public static bool IsUserLoggedIn { get; set; }
         public static TestDataGenerator test = null;
+        
         public App()
         {
             InitializeComponent();

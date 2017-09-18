@@ -13,19 +13,20 @@ Proyecto se ha realizado en Visual Studio 2017.
 - Data Binding en doble sentido.
 - Uso de SQLite para guardar la información de manera local.
 
-## Características de la aplicación 
-- Login de usuario.
-- Lista de contactos.
-- Detalles de contactos.
-- Búsqueda de contactos.
-
-
 ## TODO 
-- Página de detalle de contacto.
-- Modificación de la foto del usuario/contacto.
-- Lista de citas/eventos.
-- Almacenamiento de datos de manera local mediante SQLite.
-- Almacenamiento de datos de manera remota mediante web services.
+- [x] Login de usuario.
+- [x] Lista de contactos.
+- [x] Detalles de contactos.
+- [x] Búsqueda de contactos.
+- [x] Página de detalle de contacto.
+- [x] Modificación de los datos del usuario/contacto.
+- [ ] Lista de citas/eventos.
+- [x] !! Almacenamiento de datos de manera local mediante SQLite.
+	NOTA: la funcionalidad de usar SQLite esta ahí pero no se usa ya que SQLite.Net reconoce solo una
+	serie de tipos de datos, por lo que no se puede tener una lista de <Contact> en un User. Habría que
+		usar índices y eso requiere reescribir muchas cosas.
+- [ ] Almacenamiento de datos de manera remota mediante web services.
+- [ ] Crash al volver a la pagina principal usando los botones del telefono. Debería volver a la pagina de detalles del usuario.
 
 ## Capturas de pantalla 
 

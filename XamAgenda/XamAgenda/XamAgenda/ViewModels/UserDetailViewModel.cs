@@ -15,17 +15,23 @@ namespace XamAgenda.ViewModels
     {
         string modifyButtonText = "Modificar datos";
         Contact datosUsuario = null;
+        bool isSaving = true;
         bool modifyModeOn = false;
 
         public Command ModifyToggleCommand
         {
             get;
         }
-
+        public Command CancelSaveCommand
+        {
+            get;
+        }
+        
         public UserDetailViewModel()
         {
             ModifyToggleCommand = new Command(ModifyToggle);
-            DatosUsuario = App.test.LoggedInUser.UserContact;
+            CancelSaveCommand = new Command(CancelSave);
+            DatosUsuario = new Contact(App.test.LoggedInUser.UserContact);
         }
 
         #region Implementacion interfaz PropertyChanged
@@ -78,7 +84,15 @@ namespace XamAgenda.ViewModels
                 OnPropertyChanged();
             }
         }
+
         #endregion
+
+        void SaveUserData()
+        {
+            App.test.LoggedInUser.UserContact = datosUsuario;
+        }
+
+        #region Commands
 
         //bool Validate()
         //{
@@ -92,10 +106,23 @@ namespace XamAgenda.ViewModels
         //    return valid;
         //}
 
+        void CancelSave()
+        {
+            isSaving = false;
+            ModifyToggle();
+        }
+
         void ModifyToggle()
         {
             ModifyModeOn = !ModifyModeOn;
+            // Guardar datos al desactivar el modo modify
+            if (!ModifyModeOn && isSaving)
+            {
+                SaveUserData();
+                isSaving = true; // inicializa para la proxima vez
+            }
             ModifyButtonText = modifyModeOn ? "Guardar Datos" : "Modificar Datos";
         }
+        #endregion
     }
 }

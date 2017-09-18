@@ -20,10 +20,10 @@ namespace XamAgenda.Views
             InitializeComponent();
         }
 
-        public ContactDetailsPage(Contact contact)
+        public ContactDetailsPage(Contact contact, int position)
         {
             InitializeComponent();
-            BindingContext = new ContactDetailsViewModel(contact);
+            BindingContext = new ContactDetailsViewModel(contact, position, Navigation);
         }
         //public string ToNumber(string raw)
         //{
@@ -68,9 +68,9 @@ namespace XamAgenda.Views
         //    }
         //    return null;
         //}
-    
 
-    async void CallButton_Clicked(object sender, EventArgs e)
+
+        async void CallButton_Clicked(object sender, EventArgs e)
         {
             //string translatedNumber = ToNumber(PhoneEntry.Text);
             if (await this.DisplayAlert(

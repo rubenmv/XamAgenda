@@ -6,15 +6,19 @@
         <ScrollView>
             <StackLayout VerticalOptions="StartAndExpand"  Padding="20, 20, 20, 20">
                 <Image Source="profile_pic.jpg" />
+                <Button Text="{Binding ModifyButtonText}" Command="{Binding ModifyToggleCommand}" />
+                <Button Text="Cancelar" Command="{Binding CancelSaveCommand}" IsVisible="{Binding ModifyModeOn}" />
+                <Label x:Name="messageLabel" />
                 <Label Text="Nombre" />
-                <Entry x:Name="NameEntry" Text="{Binding DatosUsuario.Name}"  IsEnabled="{Binding ModifyModeOn}" />
+                <Entry x:Name="NameEntry" Text="{Binding DatosContacto.Name}"  IsEnabled="{Binding ModifyModeOn}" />
                 <Label Text="Email" />
-                <Entry x:Name="EmailEntry" Text="{Binding DatosUsuario.Email}" IsEnabled="{Binding ModifyModeOn}" />
+                <Entry x:Name="EmailEntry" Text="{Binding DatosContacto.Email}" IsEnabled="{Binding ModifyModeOn}" />
                 <Label Text="Dirección" />
-                <Entry x:Name="AddressEntry" Text="{Binding DatosUsuario.Address}" IsEnabled="{Binding ModifyModeOn}" />
+                <Entry x:Name="AddressEntry" Text="{Binding DatosContacto.Address}" IsEnabled="{Binding ModifyModeOn}" />
                 <Label Text="Telefono" />
-                <Entry x:Name="PhoneEntry" Text="{Binding DatosUsuario.Phone}" IsEnabled="{Binding ModifyModeOn}" />
-                <Button x:Name="CallButton" Text="Llamar"  Clicked="CallButton_Clicked" />
+                <Entry x:Name="PhoneEntry" Text="{Binding DatosContacto.Phone}" IsEnabled="{Binding ModifyModeOn}" />
+                <Button x:Name="CallButton" Text="Llamar" Clicked="CallButton_Clicked" IsVisible="{Binding ShowCallButton}" />
+                <Button x:Name="DeleteButton" Text="Eliminar contacto" Command="{Binding DeleteContactCommand}" IsVisible="{Binding ModifyModeOn}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

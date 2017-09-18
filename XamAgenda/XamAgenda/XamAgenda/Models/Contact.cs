@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite.Net.Attributes;
+
 
 namespace XamAgenda.Models
 {
+    [Table("Contact")]
     public class Contact
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
@@ -23,6 +28,15 @@ namespace XamAgenda.Models
             Address = string.Empty;
             Photo = string.Empty;
             Phone = string.Empty;
+        }
+
+        public Contact(Contact contact)
+        {
+            Name = contact.Name;
+            Email = contact.Email;
+            Address = contact.Address;
+            Photo = contact.Photo;
+            Phone = contact.Phone;
         }
 
         public Contact(string name, string email, string address, string photo, string phone)

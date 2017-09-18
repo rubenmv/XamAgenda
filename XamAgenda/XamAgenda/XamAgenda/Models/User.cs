@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using SQLite.Net.Attributes;
+using System;
 
 namespace XamAgenda.Models
 {
+    [Table("User")]
     public class User
     {
         [PrimaryKey, AutoIncrement]

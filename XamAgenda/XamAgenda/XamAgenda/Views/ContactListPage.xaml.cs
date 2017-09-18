@@ -17,11 +17,12 @@ namespace XamAgenda.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactListPage : ContentPage
     {
-        
+        ContactListViewModel viewModel = null;
         public ContactListPage()
         {
             InitializeComponent();
-            BindingContext = new ContactListViewModel();
+            viewModel = new ContactListViewModel();
+            BindingContext = viewModel;
         }
         // TODO: PASAR AL VIEWMODEL
         public async void OnContactTappedEvent(object sender, ItemTappedEventArgs e)
@@ -30,7 +31,9 @@ namespace XamAgenda.Views
             if (contact == null)
                 return;
 
-            await Navigation.PushAsync(new ContactDetailsPage(contact));
+            int position = (ContactListView.ItemsSource as IList<Contact>).IndexOf(contact);
+
+            await Navigation.PushModalAsync(new ContactDetailsPage(contact, position));
         }
 
         private async void newContactToolbarItem_Clicked(object sender, EventArgs e)

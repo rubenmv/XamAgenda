@@ -8,7 +8,7 @@
     <ScrollView>
         <StackLayout Orientation="Vertical">
             <!--<SearchBar x:Name="ContactSearchBar" Placeholder="Buscar contacto" SearchCommand="{Binding SearchCommand}"></SearchBar>-->
-            <ListView  x:Name="ContactListView" ItemsSource="{Binding Contactos}" ItemTapped="OnContactTappedEvent">
+            <ListView x:Name="ContactListView" ItemsSource="{Binding Contactos}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemTapped="OnContactTappedEvent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell
@@ -16,7 +16,8 @@
                             Detail="{Binding Phone}"
                             TextColor="#503026"
                             DetailColor="#f35e20"
-                            ImageSource="profile_pic.jpg"/>
+                            ImageSource="profile_pic.jpg"
+                             />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

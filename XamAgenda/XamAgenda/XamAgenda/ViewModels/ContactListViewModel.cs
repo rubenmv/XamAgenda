@@ -15,6 +15,7 @@ namespace XamAgenda.ViewModels
     class ContactListViewModel : INotifyPropertyChanged
     {
         INavigation Navigation { get; set; }
+        Contact selectedItem = null;
 
         IList<Contact> contactos = null;
         public IList<Contact> Contactos
@@ -34,13 +35,44 @@ namespace XamAgenda.ViewModels
         {
             get;
         }
-        
+
+        public Command TappedCommand
+        {
+            get;
+        }
+
+
+        public Contact SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+            set
+            {
+                selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public ContactListViewModel()
         {
             SearchCommand = new Command(SearchContact);
-                Contactos = App.test.LoggedInUser.UserContactList;
+            //TappedCommand = new Command(OnItemTapped);
+            Contactos = App.test.LoggedInUser.UserContactList;
         }
+        
+        /// <summary>
+        /// Abre informacion de contacto seleccionado
+        /// </summary>
+        //void OnItemTapped()
+        //{
+        //    if (selectedItem == null)
+        //        return;
+        //    Navigation.PushAsync(new ContactDetailsPage(selectedItem, position));
+
+        //}
 
         void SearchContact()
         {
@@ -50,14 +82,6 @@ namespace XamAgenda.ViewModels
             //SuggestionsListView.ItemsSource = suggestions;
         }
 
-        /// <summary>
-        /// Abre la pagina de detalles del contacto
-        /// </summary>
-        public void OnContactTappedEvent(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ContactDetailsPage());
-        }
-        
         #region Implementacion interfaz PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
